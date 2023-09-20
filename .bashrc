@@ -126,6 +126,7 @@ export AWS_VAULT_BACKEND="pass"
 
 # This will make the aws-vault work
 export GPG_TTY=$(tty)
+# export AWS_VAULT_PASS_PASSWORD_STORE_DIR=/home/simone/.password-store/aws-vault
 
 # Reload bashrc setting
 alias bash::reload='source ~/.bashrc && echo done'
@@ -152,6 +153,7 @@ alias tunnel::id::mysql::production='ssh -fNL 3310:id-clone.cnojkoxc94tb.eu-west
 alias tunnel::core::mysql::production='ssh -fNL 3311:core-ro.cnojkoxc94tb.eu-west-1.rds.amazonaws.com:3306 spanebianco@gw.lecab.fr'
 alias tunnel::redis='ssh -fNL 6380:data-cache-id.le.cab:6379 spanebianco@gw.le.cab'
 alias tunnel::check='lsof -i -n | grep ssh'
+alias tunnel::simoserver='ssh simone-Server'
 
 # Add nodenv
 export PATH=$PATH:/home/simone/.nodenv/bin
@@ -165,3 +167,6 @@ alias commit::diff::nomerge='_diff_commit() { git log $1..$2 --no-merges --oneli
 
 # Open Explorer on the current folder
 alias explorer='explorer.exe `wslpath -w "$PWD"`'
+
+# Git Completition
+test -f ~/.git-completion.bash && . $_
